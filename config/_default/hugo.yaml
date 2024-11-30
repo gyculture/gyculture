@@ -1,8 +1,8 @@
-baseURL: https://gyculture.github.io/gyculture/
+baseURL: https://www.guoyinpm.com/
 title: 国吟文化
 # Copyright, the {year} is the placeholder of this year.
-copyright: "Copyright © 2022-{year} [国吟文化](https://hugomods.com/). 版权所有."
-defaultContentLanguage: en
+copyright: "Copyright © 2022-{year} [国吟文化拍卖集团](https://www.guoyinpm.com/). 版权所有."
+defaultContentLanguage: zh-hans
 defaultContentLanguageInSubdir: false # when true, append the default language code into URL, i.e. /docs -> /en/docs.
 enableRobotsTXT: true
 timeout: 120s
