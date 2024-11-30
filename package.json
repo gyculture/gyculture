@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hbstack/theme-cards.git"
+    "url": "git+https://github.com/gyculture/gyculture.git"
   },
   "author": "Razon Yang <razonyang@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hbstack/theme-cards/issues"
+    "url": "https://github.com/gyculture/gyculture/issues"
   },
-  "homepage": "https://github.com/hbstack/theme-cards#readme",
+  "homepage": "https://github.com/gyculture/gyculture#readme",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.0",
     "autoprefixer": "^10.4.14",
