@@ -1,3 +1,4 @@
 ---
-title: 博客
+title: 展品
+description: 所有展品。
 ---

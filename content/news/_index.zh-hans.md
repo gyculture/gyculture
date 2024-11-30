@@ -1,6 +1,6 @@
 ---
-title: 文档
-description: 文档布局示例。
+title: 新闻
+description: 公司新闻。
 menu:
   main:
     weight: 1

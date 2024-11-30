@@ -7,12 +7,12 @@ main:
         vendor: fas
         name: blog
 
-  - name: Support
-    identifier: support
-    weight: 100
-    url: https://github.com/hbstack
-    params:
-      header: The HB support community.
-      icon:
-        vendor: font-awesome-solid
-        name: headset
+  # - name: Support
+  #   identifier: support
+  #   weight: 100
+  #   url: https://github.com/hbstack
+  #   params:
+  #     header: The HB support community.
+  #     icon:
+  #       vendor: font-awesome-solid
+  #       name: headset
