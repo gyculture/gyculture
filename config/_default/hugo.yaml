@@ -14,9 +14,9 @@ title_sections: true # when false, remove the sections from the title.
 title_sections_depth: 0 # the depth of sections on the title.
 title_sections_depth_dir: end # when start, the depth is counting from the root sections.
 
-permalinks:
-  blog: /blog/:year/:month/:title
-  news: /news/:year/:month/:title
+# permalinks:
+  # blog: /blog/:year/:month/:title
+  # news: /news/:year/:month/:title
 
 outputs:
   home:
