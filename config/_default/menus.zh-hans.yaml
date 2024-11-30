@@ -1,6 +1,6 @@
 main:
   - identifier: blog
-    name: 博客
+    name: 全部
     weight: 4
     params:
       icon:

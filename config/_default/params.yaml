@@ -1,4 +1,4 @@
-description: The cards theme template of HB (Hugo Bootstrap) Framework.
+description: 国吟文化文物艺术品鉴定评估中心（以下简称“中心”）隶属于国吟文化文物鉴定有限公司。
 
 hb:
   # js_bundle_name: main # the JS bundle name.
@@ -40,11 +40,11 @@ hb:
         # title: Profile title other than site title.
         # description: Profile description other than site description.
         avatar_size: 100
-        company: COMPANY
-        location: Earth
+        company: 国吟文化拍卖集团
+        location: 北京
         socials:
-          github: hbstack
-          mastodon: https://techhub.social/@hbstack
+          # github: hbstack
+          # mastodon: https://techhub.social/@hbstack
           rss: true
       posts:
         recent_count: 5 # the number of recent posts.
@@ -85,14 +85,14 @@ hb:
         - blog
         - news
     giscus:
-      repo: hbstack/theme-cards
-      repo_id: R_kgDOK1LmSQ
-      category_id: DIC_kwDOK1LmSc4CbdiM
+      repo: gyculture/gyculture
+      repo_id: R_kgDONW1mzg
+      category_id: DIC_kwDONW1mzs4Ckv-w
   docs:
     giscus:
-      repo: hbstack/theme-cards
-      repo_id: R_kgDOK1LmSQ
-      category_id: DIC_kwDOK1LmSc4CbdiM
+      repo: gyculture/gyculture
+      repo_id: R_kgDONW1mzg
+      category_id: DIC_kwDONW1mzs4Ckv-w
     social_share_buttons:
       alignment: center
       media:
@@ -102,11 +102,10 @@ hb:
   content_panel:
     repo:
       service: github # github or gitlab.
-      repo: hbstack/theme-cards
+      repo: gyculture/gyculture
       branch: main
-      subpath: exampleSite
-  # gallery:
-  #   thumbnail_size: "x640"
+  gallery:
+    thumbnail_size: "x640"
   # google_fonts:
     # families:
       # - name: Lato
