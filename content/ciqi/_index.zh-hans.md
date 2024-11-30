@@ -5,7 +5,7 @@ menu:
     params:
       icon:
         vendor: bs
-        name: 瓷器
+        name: ciqi
         className: text-primary-emphasis
       description: 瓷器
 ---
