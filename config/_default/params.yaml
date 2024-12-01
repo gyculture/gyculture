@@ -45,7 +45,7 @@ hb:
         socials:
           # github: hbstack
           # mastodon: https://techhub.social/@hbstack
-          rss: true
+          # rss: true
       posts:
         recent_count: 5 # the number of recent posts.
         featured_count: 5 # the number of featured posts.
