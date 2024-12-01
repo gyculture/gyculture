@@ -11,7 +11,7 @@ hb:
     socials:
       # github: hbstack
       # twitter: razonyang
-      rss: true
+      # rss: true
   footer:
     # see https://hbstack.dev/en/docs/modules/socials/.
     socials:
