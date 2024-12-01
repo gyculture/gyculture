@@ -5,7 +5,7 @@ draft: false
 description: "关于我们"
 menu:
   main:
-    weight: 1
+    weight: 50
     params:
       icon:
         vendor: bs
