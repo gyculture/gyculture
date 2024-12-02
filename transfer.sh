@@ -2,8 +2,8 @@
 
 # Define the directories
 input_dir="content"
-output_dir="imagesync"
-# mkdir -p "$output_dir"
+output_dir="transfer"
+mkdir -p "$output_dir"
 
 executed_file=$(mktemp)
 echo "$executed_file"
@@ -19,12 +19,13 @@ find "$input_dir" -name "*.md" | while read -r file; do
         echo "true" > "$executed_file"
         echo "$url"
         # Extract the filename from the URL
-        filename=$(basename "$url")
+        filename="$(basename "$url").png"
         # Download the file to the output directory
-        # wget "$url" -O "$output_dir/$filename"
-        api="https://api.superbed.cn/upload?token="
+        wget "$url" -O "$output_dir/$filename"
+        token="Authorization: Bearer 127|your_token"
+        api="https://imgtg.com/api/v1/upload"
         # Upload
-        new_url=$(curl -F "file=@$output_dir/$filename" $api | grep -oP '(?<="url": ")[^"]+')
+        new_url=$(curl -F "file=@$output_dir/$filename" -H "$token" "$api" | grep -oP '(?<="url":")[^"]+' | sed 's|\\/|/|g')
         # Replace
         if [ -n "$new_url" ]; then
             echo "Replacing $url with $new_url"
@@ -38,6 +39,6 @@ rm "$executed_file"
 
 if [ -n "$executed" ]; then
     echo "Commit changes"
-    git pull; git add .; git commit -m "Migrate images from github to gitee"; git push;
+    git pull; git add .; git commit -m "Migrate images from Github"; git push;
 fi
 
