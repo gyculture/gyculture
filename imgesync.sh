@@ -19,7 +19,7 @@ find "$input_dir" -name "*.md" | while read -r file; do
         echo "true" > "$executed_file"
         echo "$url"
         # Extract the filename from the URL
-        filename="$(basename "$url").png"
+        filename=$(basename "$url")
         # Download the file to the output directory
         wget "$url" -O "$output_dir/$filename"
         uploader_api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
