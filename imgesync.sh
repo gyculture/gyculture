@@ -21,10 +21,10 @@ find "$input_dir" -name "*.md" | while read -r file; do
         # Extract the filename from the URL
         filename=$(basename "$url")
         # Download the file to the output directory
-        wget "$url" -O "$output_dir/$filename"
+        # wget "$url" -O "$output_dir/$filename"
         api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
         # Upload
-        new_url = $(curl -F "file=@$output_dit/$filename" $api | grep -oP '(?<="url": ")[^"]+')
+        new_url=$(curl -F "file=@$output_dir/$filename" $api | grep -oP '(?<="url": ")[^"]+')
         # Replace
         if [-n "$new_url"]; then
             echo "Replacing $url with $new_url"
