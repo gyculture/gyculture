@@ -2,7 +2,7 @@
 
 # Define the directories
 input_dir="content"
-output_dir="imgesync"
+output_dir="imagesync"
 # mkdir -p "$output_dir"
 
 executed_file=$(mktemp)
@@ -22,7 +22,7 @@ find "$input_dir" -name "*.md" | while read -r file; do
         filename=$(basename "$url")
         # Download the file to the output directory
         wget "$url" -O "$output_dir/$filename"
-        uploader_api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
+        api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
         # Upload
         new_url = $(curl -F "file=@$output_dit/$filename" $api | grep -oP '(?<="url": ")[^"]+')
         # Replace
