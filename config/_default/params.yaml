@@ -41,7 +41,7 @@ hb:
         # description: Profile description other than site description.
         avatar_size: 100
         company: 国吟文化拍卖集团
-        location: 北京
+        location: 西安
         socials:
           # github: hbstack
           # mastodon: https://techhub.social/@hbstack
