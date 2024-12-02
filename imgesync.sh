@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the directories
-input_dir="gyculture/content"
-output_dir="imgcdn/images"
+input_dir="content"
+output_dir="imgesync"
 # mkdir -p "$output_dir"
 
 executed_file=$(mktemp)
@@ -10,9 +10,7 @@ echo "$executed_file"
 echo "" > "$executed_file"
 
 # update
-cd "$input_dir"
 git pull
-cd ../../
 
 # Find all .md files in the input directory
 find "$input_dir" -name "*.md" | while read -r file; do
@@ -23,21 +21,23 @@ find "$input_dir" -name "*.md" | while read -r file; do
         # Extract the filename from the URL
         filename="$(basename "$url").png"
         # Download the file to the output directory
-        # wget "$url" -O "$output_dir/$filename"
+        wget "$url" -O "$output_dir/$filename"
+        uploader_api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
+        # Upload
+        new_url = $(curl -F "file=@$output_dit/$filename" $api | grep -oP '(?<="url": ")[^"]+')
         # Replace
-        new_url="https://gitee.com/sudiaty/imgcdn/raw/master/images/$filename"
-        find "$input_dir" -type f -name "*.md" -exec sed -i "s|${url}|${new_url}|g" {} +
+        if [-n "$new_url"]; then
+            echo "Replacing $url with $new_url"
+            find "$input_dir" -type f -name "*.md" -exec sed -i "s|${url}|${new_url}|g" {} +
+        fi
     done
-done 
+done
 
 executed=$(cat "$executed_file")
 rm "$executed_file"
 
 if [ -n "$executed" ]; then
     echo "Commit changes"
-    cd "$output_dir"
-    git pull; git add .; git commit -m "Migrate images from github to gitee"; git push;
-    cd "../../$input_dir"
     git pull; git add .; git commit -m "Migrate images from github to gitee"; git push;
 fi
 
