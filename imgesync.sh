@@ -22,11 +22,11 @@ find "$input_dir" -name "*.md" | while read -r file; do
         filename=$(basename "$url")
         # Download the file to the output directory
         # wget "$url" -O "$output_dir/$filename"
-        api="https://api.superbed.cn/upload?token=e5c83d06a41b4b04a282be99d72a4a82"
+        api="https://api.superbed.cn/upload?token="
         # Upload
         new_url=$(curl -F "file=@$output_dir/$filename" $api | grep -oP '(?<="url": ")[^"]+')
         # Replace
-        if [-n "$new_url"]; then
+        if [ -n "$new_url" ]; then
             echo "Replacing $url with $new_url"
             find "$input_dir" -type f -name "*.md" -exec sed -i "s|${url}|${new_url}|g" {} +
         fi
