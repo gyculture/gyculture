@@ -22,7 +22,7 @@ find "$input_dir" -name "*.md" | while read -r file; do
         filename="$(basename "$url").png"
         # Download the file to the output directory
         wget "$url" -O "$output_dir/$filename"
-        token="Authorization: Bearer 127|your_token"
+        token="Authorization: Bearer 128|IFA3OJeCfXNDcxCvmM36H7dXrtwDsfhFip1Lzoeh"
         api="https://imgtg.com/api/v1/upload"
         # Upload
         new_url=$(curl -F "file=@$output_dir/$filename" -H "$token" "$api" | grep -oP '(?<="url":")[^"]+' | sed 's|\\/|/|g')
